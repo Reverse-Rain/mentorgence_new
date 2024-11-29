@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorgence</title>
+    <link rel="stylesheet" href="mb_style.css">
+    <script>
+        function checkScreenSize() {
+            if (window.innerWidth > 768) {
+                window.location.href = "index.html";
+            }
+        }
+    
+        // Add loaded class to body after load
+        window.onload = function() {
+            document.body.classList.add('loaded');  // Trigger fade-in
+            checkScreenSize();
+        };
+    
+        window.onresize = checkScreenSize;
+    </script>
+    
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            <div class="child">
+                <img src="images/Group.svg" alt="">
+            </div>
+            <div class="child"></div>
+        </div>
+
+        <div class="links_section">
+            <div class="btn">
+                <div class="button"><a href="">Register Now</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="herosection">
+        <div class="left">
+            <img src="images/Patterns.svg" alt="">
+        </div>
+        <div class="right">
+            <img src="images/Image 1.svg" alt="">
+        </div>
+    </div>
+
+    <div class="herotexts">
+        <h1>Your Trusted GUIDE </h1>
+        <h3>to Global Education</h3>
+        <p>We believe that education opens doors to a world of possibilities, and our mission is to support students in making informed decisions.</p>
+    </div>
+
+    <div class="box">
+        <div class="lside">
+            <img src="images/sidel.svg" alt="">
+        </div>
+        <div class="midd">
+            <h>We Guarantee the <span>Best Service </span></h>
+        </div>
+        <div class="rside">
+            <img src="images/sider.svg" alt="">
+        </div>
+    </div>
+
+<div class="whyus">
+    <h>Why choose <span>Mentorgence?</span></h1>
+</div>
+
+
+<div class="service_list">
+
+    <div class="sbox on" style="background: #F5F9FE;">
+        <div class="circle" style="background: #B5E7E8;"></div>
+        <h3>Languages</h3>
+        <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
+    </div>
+    <div class="sbox of" style="    background: #ffffff;">
+        <div class="circle" style="background: #FFE8B3;"></div>
+        <h3>Political Science</h3>
+        <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
+    </div>
+    <div class="sbox on" style="    background: #F5F9FE;">
+        <div class="circle" style="background: #DDD5FE;"></div>
+        <h3>Engineering</h3>
+        <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
+    </div>
+    <div class="sbox of" style="    background: #ffffff;">
+        <div class="circle" style="background: #FFE8B3;"></div>
+        <h3>Mathematics</h3>
+        <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
+    </div>
+    <div class="sbox " style="    background: #F5F9FE;">
+        <div class="circle" style="background: #B5E7E8;"></div>
+        <h3>Teaching</h3>
+        <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
+    </div>
+</div>
+
+<div class="howwework">
+    <div class="topl">
+        <img src="images/image-removebg-preview.png" alt="">
+    </div>
+    <div class="topr">
+        <h2>How We <span>works</span></h2>
+    </div>
+</div>
+<div class="worklist">
+    <div class="bx">
+        <div class="circle" style="background: #FFE8B3  ; margin-left:10%; " ></div>
+        <h3>Values</h3>
+        <p>Integrity, commitment, and student success are our core values.</p>
+    </div>
+    <div class="bx">
+        <div class="circle" style="background: #ECE5FF;margin-left:10%;" ></div>
+        <h3>Mission</h3>
+        <p>We guide students to make informed choices for higher education.</p>
+    </div>
+    <div class="bx">
+        <div class="circle" style="background: #CBF9F7; margin-left:10%; "></div>
+        <h3>Focus</h3>
+        <p>Helping students secure placements in top global universities.</p>
+    </div>
+</div>
+
+<div class="university">
+
+    <div class="container">
+        <h1 class="section-title">Top Universities</h1>
+
+        <div class="university-grid" id="universityGrid"></div>
+        <div class="view-more">
+            <button id="viewMoreBtn">View More</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        // List of universities
+        const universities = [
+            { img: "images/img.svg", name: "New York University" },
+            { img: "images/Image 1-1.svg", name: "Columbia University" },
+            { img: "images/Image 3.svg", name: "University Of Maryland" },
+            { img: "images/img.svg", name: "Harvard University" },
+            { img: "images/Image 1-1.svg", name: "Stanford University" },
+            { img: "images/Image 3.svg", name: "MIT" },
+            { img: "images/img.svg", name: "University of California" },
+            { img: "images/Image 1-1.svg", name: "Oxford University" },
+            { img: "images/Image 3.svg", name: "Cambridge University" }
+        ];
+
+        const universityGrid = document.getElementById("universityGrid");
+        const viewMoreBtn = document.getElementById("viewMoreBtn");
+
+        // Initially show only the first 3 universities
+        let visibleCount = 1;
+
+        // Function to render universities
+        function renderUniversities() {
+            universityGrid.innerHTML = ""; // Clear the grid
+            universities.slice(0, visibleCount).forEach(university => {
+                const card = document.createElement("div");
+                card.classList.add("university-card");
+
+                card.innerHTML = `
+            <img src="${university.img}" alt="${university.name}">
+            <h3>${university.name}</h3>
+        `;
+
+                universityGrid.appendChild(card);
+            });
+        }
+
+        // Load all universities on "View More" click
+        viewMoreBtn.addEventListener("click", () => {
+            visibleCount = universities.length; // Show all universities
+            renderUniversities();
+            viewMoreBtn.style.display = "none"; // Hide the button after showing all
+        });
+
+        // Initial render
+        renderUniversities();
+
+    </script>
+</div>
+
+<div class="sfooter">
+    <div class="ftop">
+        <div class="lshp">
+            <img src="images/Pattern 5.svg" alt="">
+        </div>
+        <div class="midd">
+            <div class="mt">
+                <h3>Know more about our services</h3>
+            </div>
+            <div class="mb">
+                <button class="btn-filled">Make an Appoinment</button>
+                <button class="btn-unfilled">Contact Us </button>
+            </div>
+        </div>
+    </div>
+    <div class="fbottom">
+        <footer class="footer">
+            <div class="footer-container">
+              <!-- Contact Section -->
+              <div class="contact-section">
+                <div class="contact-item">
+                  <img src="icons8-whatsapp-50.png" alt="WhatsApp" class="icon" />
+                  <span>+971 56 162 5698</span>
+                </div>
+                <div class="contact-item">
+                  <img src="images/Vector (1).svg" alt="Email" class="icon" />
+                  <span>me2gence@gmail.com</span>
+                </div>
+              </div>
+              <div class="social-icons">
+                <a href="#" class="social-link">
+                  <img src="images/Vector-1.svg" alt="Threads" class="icon" />
+                </a>
+                <a href="#" class="social-link">
+                  <img src="images/g2.svg" alt="Instagram" class="icon" />
+                </a>
+                <a href="#" class="social-link">
+                  <img src="images/Vector.svg" alt="Facebook" class="icon" />
+                </a>
+              </div>
+              <div class="nav-links">
+                <a href="#">About Us</a>
+                <a href="#">Support</a>
+                <a href="#">Home</a>
+              </div>
+          </footer>
+          <div class="footer-bottom">
+            <p>© 2022 Blackboard India Pvt. Ltd. All rights reserved.</p>
+          </div>
+    </div>
+    
+</div>
+
+
+
+</body>
+
+</html>
