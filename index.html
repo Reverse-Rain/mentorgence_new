@@ -25,10 +25,8 @@
             <div class="links">
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">Programs</a></li>
-                    <li><a href="">Exams</a></li>
-                    <li><a href="">Countries</a></li>
-                    <li><a href="">Help</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Support</a></li>
                 </ul>
             </div>
             <div class="btn">
@@ -64,34 +62,158 @@
     <!-- ========================================= -->
     <!--           Start: hero section     -->
     <!-- ========================================= -->
-    <div class="hero">
-        <div class="heading">
-            <div class="texts">
+    <div class="herosection">
+        <div class="left_container">
+            <div class="ltop">
                 <h1>Your Trusted Guide to</h1>
-                <h3>Global Education</h3>
-                <p>At MentorGence, we are dedicated to providing students with trusted guidance on their journey to
-                    pursuing higher education abroad. We work closely with students, parents, and partner universities
-                    to create clear pathways to global learning opportunities.</p>
-                <div class="partners">
-                    <p>Partnered With</p>
-                    <div class="logos">
-                        <img src="images/ulogo.svg" alt="Harvard University">
-                        <img src="images/ulogo2.svg" alt="University of Michigan">
-                    </div>
-                </div>
+                <h2>Global Education</h2>
+                <p>At MentorGence, we are dedicated to providing students with trusted guidance on their journey to pursuing
+                    higher education abroad. We work closely with students, parents, and partner universities to create
+                    clear
+                    pathways to global learning opportunities.</p>
             </div>
-
+            <div class="lbtom">
+                <h3>Patnered with</h3>
+                <div class="logos">
+                    <img src="images/ulogo.svg" alt="Harvard University">
+                    <img src="images/ulogo2.svg" alt="University of Michigan">
+                </div>
+    
+            </div>
+    
         </div>
-        <div class="image">
-            <div class="shape">
+        <div class="right_container">
+            <div class="lftshape">
                 <img src="images/Patterns.svg" alt="">
             </div>
-            <div class="imgs">
+            <div class="rgtimg">
                 <img src="images/Image 1.svg" alt="">
             </div>
         </div>
     </div>
-
+    
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+        }
+    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+   
+    
+        .left_container {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    
+        .ltop {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .ltop h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 76.8px;
+            color: #000000;
+            font-weight: bold;
+            width: 60%;
+        }
+    
+        .ltop h2 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 61.44px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #92193B;
+    
+        }
+    
+        .ltop p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            margin-top: 2%;
+            width: 80%;
+    
+    
+        }
+    
+        .lbtom {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            gap: 10%;
+            margin-top: 7%;
+        }
+    
+        .lbtom h3 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 32px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+    
+        }
+    
+        .logos {
+            display: flex;
+            gap: 10%;
+    
+            justify-content: space-evenly;
+        }
+    
+        .logos img {}
+    
+        .right_container {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    
+        .lftshape {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+    
+        }
+    
+        .rgtimg {
+            width: 70%;
+            height: 100%;
+            display: flex;
+    
+        }
+    
+        .rgtimg img {
+            width: 100%;
+            height: 100%;
+    
+        }
+    
+        .lftshape img {
+    
+            width: 200%;
+            height: 200%;
+        }
+    </style>
     <div class="mb_herosection">
         <div class="mb_left">
             <img src="images/Patterns.svg" alt="">
@@ -118,7 +240,7 @@
             <img src="images/sidel.svg" alt="">
         </div>
         <div class="aboutus_text">
-            <h3>We Guarantee the <span>Best Service</span> </h3>
+            <h>We Guarantee the <span>Best Service</span> </h>
         </div>
         <div class="shape2">
             <img src="images/sider.svg" alt="">
@@ -193,30 +315,30 @@
                 <img src="images/Pattern 3.svg" alt="">
             </div>
             <div class="service_list">
-                <div class="sbox">
+                <div class="sbox off">
 
                 </div>
-                <div class="sbox" style="background: #F5F9FE;">
+                <div class="sbox onn" style="background: #F5F9FE;">
                     <div class="circle" style="background: #B5E7E8;"></div>
                     <h3>Ethical Guidance</h3>
                     <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
                 </div>
-                <div class="sbox" style="    background: #ffffff;">
+                <div class="sbox onn" style="    background: #ffffff;">
                     <div class="circle" style="background: #FFE8B3;"></div>
                     <h3>Focus on Student Success</h3>
                     <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
                 </div>
-                <div class="sbox" style="    background: #F5F9FE;">
+                <div class="sbox onn" style="    background: #F5F9FE;">
                     <div class="circle" style="background: #DDD5FE;"></div>
                     <h3>Authorized University Agent</h3>
                     <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
                 </div>
-                <div class="sbox" style="    background: #ffffff;">
+                <div class="sbox onn" style="    background: #ffffff;">
                     <div class="circle" style="background: #FFE8B3;"></div>
                     <h3>Transparent Services</h3>
                     <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
                 </div>
-                <div class="sbox" style="    background: #F5F9FE;">
+                <div class="sbox onn" style="    background: #F5F9FE;">
                     <div class="circle" style="background: #B5E7E8;"></div>
                     <h3>Comprehensive Support</h3>
                     <div class="go"><img src="images/XMLID 1522.svg" alt=""></div>
@@ -260,7 +382,7 @@
         </div>
         <div class="middile">
             <div class="ybox" id="one">
-                <div class="circle" style="background: #FFE8B3;"></div>
+                <div class="circle" id="q" style="background: #FFE8B3;"></div>
                 <h3>Values</h3>
                 <p>Integrity, commitment, and student success are our core values.</p>
 
