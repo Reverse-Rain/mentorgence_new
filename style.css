@@ -412,7 +412,7 @@ span {
     height: 70px;
     background: #b0f396;
     border-radius: 50%;
-    
+
 }
 
 .go {
@@ -520,7 +520,7 @@ span {
     transition: 0.5s;
     box-shadow: #ffe8b36e 10px 10px 20px 1px;
     background-size: 20%;
- 
+
 
 }
 
@@ -529,15 +529,16 @@ span {
     transition: 0.5s;
     box-shadow: #ffe8b36e 10px 10px 20px 1px;
     background-size: 30%;
- 
+
 
 }
+
 #three:hover {
     transform: translateX(-10px) translateY(-20px);
     transition: 0.5s;
     box-shadow: #ffe8b36e 10px 10px 20px 1px;
     background-size: 30%;
- 
+
 
 }
 
@@ -549,6 +550,7 @@ span {
     box-shadow: #ddd5fe8f 10px 10px 20px 1px;
 
 }
+
 #three:hover {
     transform: translateX(-10px) translateY(-20px);
     transition: 0.5s;
@@ -619,10 +621,14 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10%;
+
+
 }
 
 .container {
-    max-width: 1200px;
+
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 
@@ -657,12 +663,18 @@ span {
 }
 
 .university-grid {
+    margin-top: 10%;
+    margin-bottom: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-    gap: 20px;
+    column-gap: 45px;
+
 }
 
 .university-card {
+    position: relative;
+    /* Set this for absolute positioning of child elements */
+    height: 500px;
     animation: appear;
     animation-delay: 1s;
     animation-timeline: view();
@@ -673,6 +685,7 @@ span {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+
 }
 
 .university-card:hover {
@@ -681,32 +694,51 @@ span {
 
 .university-card img {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     object-fit: cover;
 }
 
 .university-card h3 {
-    margin: 10px 0;
-    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    /* Align to the left */
+    background: white;
+    padding: 8px 12px;
+    /* Add some padding for better appearance */
+    margin: 0;
+    /* Remove default margin */
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    /* Ensure it doesn’t wrap */
 }
 
 .sfooter {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
 }
 
 .ftop {
     width: 100%;
 
-    height: 40%;
+    height: 50%;
     display: flex;
-    align-items: center;
     background: var(--primary);
+    align-items: center;
 
 }
 
 .lshp {
     height: 100%;
+    display: flex;
+    align-items: center;
+
 
 }
 
@@ -724,20 +756,22 @@ span {
 
 .rshp {
     height: 100%;
-
+    display: flex;
+    align-items: center;
 }
 
 
 .lshp img {
-    height: 100%;
+
+    height: 90%;
 }
 
 .rshp img {
-    height: 100%;
+    height: 50%;
 }
 
 .btn-filled {
-    width: 60%;
+    width: 30%;
     height: 50px;
     background: #ffffff;
     border: none;
@@ -757,7 +791,7 @@ span {
 }
 
 .btn-unfilled {
-    width: 40%;
+    width: 20%;
     height: 50px;
     border-radius: 5px;
     border: 1px white solid;
