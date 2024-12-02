@@ -777,7 +777,14 @@ span {
     border: none;
     border-radius: 5px;
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25.6px;
+    letter-spacing: 0.02em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+    
     transition: 0.5s;
 
 }
@@ -797,7 +804,13 @@ span {
     border: 1px white solid;
     background: #ffffff00;
     color: white;
-    font-size: 1.2rem;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25.6px;
+    letter-spacing: 0.02em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
 
 }
 
@@ -1538,18 +1551,18 @@ body.loaded {
 
 
     .mb_btn-filled {
+        width: 30%;
         height: 50px;
         background: #ffffff;
         border: none;
         border-radius: 5px;
         color: var(--primary);
-        font-size: 1.2rem;
-        transition: 0.5s;
-        width: auto;
-        /* Let the button width be dynamic */
-        padding: 10px 20px;
-        /* Adjust padding for better button size */
-        font-size: 1.2rem;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25.6px;
+        letter-spacing: 0.02em;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
     }
 
     .mb {
@@ -1559,17 +1572,18 @@ body.loaded {
     }
 
     .mb_btn-unfilled {
+        width: 20%;
         height: 50px;
         border-radius: 5px;
         border: 1px white solid;
         background: #ffffff00;
         color: white;
-        font-size: 1.2rem;
-        width: auto;
-        /* Let the button width be dynamic */
-        padding: 10px 20px;
-        /* Adjust padding for better button size */
-        font-size: 1.2rem;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25.6px;
+        letter-spacing: 0.02em;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
     }
 
     .mb_fbottom {}
