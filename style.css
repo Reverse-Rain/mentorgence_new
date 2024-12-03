@@ -794,7 +794,8 @@ span {
 }
 
 .btn-filled {
-    width: 25%;
+    padding: 10px;
+    width: max-content;
     height: 50px;
     background: #ffffff;
     border: none;
@@ -820,7 +821,8 @@ span {
 }
 
 .btn-unfilled {
-    width: 15%;
+    padding: 10px;
+    width: max-content;
     height: 50px;
     border-radius: 5px;
     border: 1px white solid;
