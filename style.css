@@ -1,14 +1,15 @@
 /* Reset Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --primary: #92193b;
@@ -68,32 +69,52 @@ body {
     align-items: center;
 }
 
+.links_section li {
+    list-style: none;
+    margin-left: 5%;
+}
+
+
 .links {
     width: 50%;
     margin-right: -2%;
-}
-
-.links li :hover {
-    color: #1e5dbc;
 }
 
 .links ul {
     display: flex;
     justify-content: end;
     width: 100%;
+
 }
+.links li {
+    display: flex;
+
+
+}
+
 
 .links a {
     text-decoration: none;
     color: black;
     font-size: 16px;
-    line-height: 25.6px;
     font-weight: 500;
+    position: relative;  /* Needed for positioning the pseudo-element */
+    display: inline-block;  /* Ensures the pseudo-element is aligned correctly */
 }
 
-.links_section li {
-    list-style: none;
-    margin-left: 5%;
+.links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;  /* Position it just below the text */
+    width: 0;  /* Start with zero width */
+    height: 2px;  /* Thickness of the underline */
+    background-color: #1e5dbc;  /* Color of the underline */
+    transition: width 0.5s ease;  /* Animate the width */
+}
+
+.links a:hover::after {
+    width: 100%;  /* Expand the underline to full width on hover */
 }
 
 .btn {
@@ -669,6 +690,8 @@ span {
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     column-gap: 45px;
 
+    
+
 }
 
 .university-card {
@@ -679,13 +702,12 @@ span {
     animation-delay: 1s;
     animation-timeline: view();
     animation-range: entry 0%;
-    border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-
+    margin-bottom: 20%;
 }
 
 .university-card:hover {
@@ -696,6 +718,7 @@ span {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 
 .university-card h3 {
@@ -710,7 +733,7 @@ span {
     margin: 0;
     /* Remove default margin */
 
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 32px;
     text-align: left;
@@ -960,6 +983,7 @@ span {
 
 .link-group ul li a:hover {
     text-decoration: underline;
+    color: #0F2F64;
 }
 
 /* Footer Bottom */
@@ -1078,6 +1102,8 @@ body.loaded {
 @media screen and (max-width: 600px) {
 
     .mnavbar {
+        transition: 1s;
+
         display: flex;
         width: 100%;
         height: 10%;
@@ -1120,6 +1146,7 @@ body.loaded {
 
     .mlinks_section {
         width: 60%;
+
         display: flex;
         justify-content: end;
         align-items: center;
@@ -1128,6 +1155,7 @@ body.loaded {
     }
 
     .navbar {
+        transition: 1s;
         display: none;
 
     }
@@ -1319,7 +1347,6 @@ body.loaded {
     }
 
     .sbox h3 {
-        font-family: Work Sans;
         font-size: 24px;
         font-weight: 500;
         line-height: 28.8px;
@@ -1359,7 +1386,6 @@ body.loaded {
 
     .topr h2 {
 
-        font-family: Poppins;
         font-size: 40px;
         font-weight: 500;
         line-height: 48px;
@@ -1393,28 +1419,27 @@ body.loaded {
     }
 
     .bx h3 {
-        font-family: Work Sans;
+        color: #0F2F64;
         font-size: 16px;
         font-weight: 500;
         line-height: 19.2px;
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
-
+        
 
 
 
     }
 
     .bx p {
-        font-family: Poppins;
         font-size: 12px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
-
+        
     }
 
     .mb_university {
@@ -1427,7 +1452,6 @@ body.loaded {
 
 
     .section-title {
-        font-family: Work Sans;
         font-size: 30px;
         font-weight: 500;
         line-height: 36px;
@@ -1538,7 +1562,6 @@ body.loaded {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-family: Poppins;
         font-size: 30px;
         font-weight: 700;
         line-height: 36px;
