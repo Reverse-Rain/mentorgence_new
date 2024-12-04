@@ -86,6 +86,7 @@ body {
     width: 100%;
 
 }
+
 .links li {
     display: flex;
 
@@ -98,23 +99,31 @@ body {
     color: black;
     font-size: 16px;
     font-weight: 500;
-    position: relative;  /* Needed for positioning the pseudo-element */
-    display: inline-block;  /* Ensures the pseudo-element is aligned correctly */
+    position: relative;
+    /* Needed for positioning the pseudo-element */
+    display: inline-block;
+    /* Ensures the pseudo-element is aligned correctly */
 }
 
 .links a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;  /* Position it just below the text */
-    width: 0;  /* Start with zero width */
-    height: 2px;  /* Thickness of the underline */
-    background-color: #1e5dbc;  /* Color of the underline */
-    transition: width 0.5s ease;  /* Animate the width */
+    bottom: -2px;
+    /* Position it just below the text */
+    width: 0;
+    /* Start with zero width */
+    height: 2px;
+    /* Thickness of the underline */
+    background-color: #1e5dbc;
+    /* Color of the underline */
+    transition: width 0.5s ease;
+    /* Animate the width */
 }
 
 .links a:hover::after {
-    width: 100%;  /* Expand the underline to full width on hover */
+    width: 100%;
+    /* Expand the underline to full width on hover */
 }
 
 .btn {
@@ -690,7 +699,7 @@ span {
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     column-gap: 45px;
 
-    
+
 
 }
 
@@ -718,7 +727,7 @@ span {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+
 }
 
 .university-card h3 {
@@ -807,8 +816,8 @@ span {
     letter-spacing: 0.02em;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
-    
+
+
     transition: 0.5s;
 
 }
@@ -834,7 +843,7 @@ span {
     letter-spacing: 0.02em;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
+
 
 }
 
@@ -1088,11 +1097,9 @@ body.loaded {
 
 
 
-
-
-
-
-
+.mb_links {
+    display: none;
+}
 
 
 
@@ -1101,6 +1108,25 @@ body.loaded {
 
 
 @media screen and (max-width: 600px) {
+    html {
+        scroll-behavior: smooth;
+
+    }
+
+    ::selection {
+        background: var(--primary);
+        transition: 1s;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+    }
 
     .mnavbar {
         transition: 1s;
@@ -1115,6 +1141,8 @@ body.loaded {
         width: 40%;
         display: flex;
         justify-content: space-between;
+        margin-left: 5%;
+
 
     }
 
@@ -1132,15 +1160,17 @@ body.loaded {
     .mbutton a {
         background: var(--primary);
         color: #ffffff;
-        width: 120px;
+        width: 110px;
+
         height: 35px;
         border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        font-weight: 700;
-        font-size: 16px;
+        font-weight: 500;
+        font-size: 13px;
+
         line-height: 25.6px;
         letter-spacing: 2%;
     }
@@ -1153,6 +1183,120 @@ body.loaded {
         align-items: center;
         padding-right: 5%;
 
+    }
+
+    /* Base styling for the menu container */
+    .mb_links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Start off-screen */
+        width: 80%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.4s ease, box-shadow 0.4s ease;
+        z-index: 1001;
+        /* Ensure it overlays other elements */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Show the menu by sliding it in */
+    .mb_links.show {
+        left: 0;
+        /* Slide into view */
+    }
+
+    /* Styling for the menu items */
+    .mb_links ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .mb_links li {
+        margin: 20px 0;
+    }
+
+    .mb_links a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight: 500;
+        font-size: 20px;
+
+        line-height: 25.6px;
+        letter-spacing: 2%;
+        transition: color 0.3s ease;
+
+    }
+
+    .mb_links a:hover {
+        color: var(--primary);
+        /* Highlight on hover */
+    }
+
+    /* Toggle button styling */
+    .toggle-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        position: relative;
+        z-index: 1100;
+        /* Stay on top */
+        margin-left: 5%;
+        
+        
+
+    }
+
+    .toggle-btn:focus {
+        outline: none;
+    }
+
+    /* Close button styling */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+
+    .close-btn:focus {
+        outline: none;
+    }
+
+    /* Background overlay styling */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.226);
+        /* Semi-transparent overlay */
+        display: none;
+        /* Hidden by default */
+        z-index: 1000;
+        /* Below the menu */
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .menu-overlay.show {
+        display: block;
+        opacity: 1;
+        /* Fade-in effect */
     }
 
     .navbar {
@@ -1182,8 +1326,8 @@ body.loaded {
 
 
     .mb_herosection .mb_right {
-        width: 100%;
-        height: 100%;
+        width: 95%;
+        height: 95%;
 
     }
 
@@ -1205,12 +1349,16 @@ body.loaded {
         padding: 10px;
         display: block;
 
+
     }
 
     .mb_herotexts h1 {
         font-size: 40px;
         line-height: 38.4px;
         font-weight: 700;
+        margin-bottom: 3%;
+
+
 
 
     }
@@ -1220,6 +1368,8 @@ body.loaded {
         font-weight: 700;
         line-height: 28.8px;
         color: var(--primary);
+        margin-bottom: 3%;
+
 
     }
 
@@ -1259,7 +1409,6 @@ body.loaded {
     }
 
     .mb_box {
-
         width: 100%;
         height: 40vh;
         display: flex;
@@ -1287,7 +1436,7 @@ body.loaded {
         height: 100%;
         display: flex;
         color: #0F2F64;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: 500;
         line-height: 48px;
         text-align: center;
@@ -1333,7 +1482,17 @@ body.loaded {
         border-radius: 10px;
         width: 80%;
         box-shadow: rgba(212, 211, 211, 0.288) 1px 10px 50px;
-
+        animation: appear;
+        animation-delay: 1s;
+        animation-timeline: view();
+        animation-range: entry 0%;
+    }
+    .sbox:hover {
+        transform: translateX(-10px) translateY(-10px);
+        transition: 0.5s;
+        box-shadow: #d4caca56 10px 10px 20px 1px;
+        border-radius: 5%;
+    
     }
 
     .on {
@@ -1400,6 +1559,7 @@ body.loaded {
         width: 100%;
         display: block;
         background: #F5F9FE;
+        
     }
 
     .bx {
@@ -1411,7 +1571,20 @@ body.loaded {
         flex-direction: column;
         padding: 5%;
         margin-bottom: 15%;
+        animation: appear;
+        animation-delay: 1s;
+        animation-timeline: view();
+        animation-range: entry 0%;
+        transition: 1s;
 
+
+    }
+    .bx:hover {
+        transform: translateX(-10px) translateY(-10px);
+        transition: 0.5s;
+        box-shadow: #d4caca56 10px 10px 20px 1px;
+        border-radius: 5%;
+    transition: 1s;
     }
 
     .bx h3,
@@ -1427,7 +1600,7 @@ body.loaded {
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
-        
+
 
 
 
@@ -1440,7 +1613,7 @@ body.loaded {
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
-        
+
     }
 
     .mb_university {
@@ -1698,18 +1871,21 @@ body.loaded {
         text-align: center;
     }
 
-    .mb_btn-unfilled:hover {
+    .ft_mb_btn-unfilled:hover {
         background: #ffffff;
         border: none;
         border-radius: 5px;
         color: var(--primary);
+        transition: 1s;
+
     }
 
-    .mb_btn-filled:hover {
+    .ft_mb_btn-filled:hover {
         background: #ad4764;
         border: white 1px solid;
         border-radius: 5px;
         color: white;
+        transition: 1s;
     }
 
 
