@@ -24,9 +24,9 @@
         <div class="links_section">
             <div class="links">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Support</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#support">Support</a></li>
                 </ul>
             </div>
             <div class="btn">
@@ -37,12 +37,12 @@
         </div>
     </div>
 
-    <div class="mnavbar">
+    <div class="mnavbar" id="mb_home">
         <div class="mlogo">
             <div class="mchild">
                 <img src="images/Group.svg" alt="Mobile Logo">
             </div>
-            <div class="mchild"> </div>
+            <div class="mchild"></div>
         </div>
         <div class="mlinks_section">
             <div class="mbtn">
@@ -50,8 +50,38 @@
                     <a href="">Register Now</a>
                 </div>
             </div>
+            <button class="toggle-btn" onclick="toggleMenu()">☰</button> <!-- Toggle Button -->
+
         </div>
     </div>
+    <div class="menu-overlay" id="menuOverlay"></div> <!-- Background overlay -->
+    <div class="mb_links" id="mbLinks">
+        <button class="close-btn" onclick="toggleMenu()">✕</button> <!-- Close button -->
+        <ul>
+            <li><a href="#mb_home">Home</a></li>
+            <li><a href="#mb_about">About Us</a></li>
+            <li><a href="#mb_support">Support</a></li>
+        </ul>
+    </div>
+
+    <!-- JavaScript to handle the toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mbLinks');
+            const overlay = document.getElementById('menuOverlay');
+            menu.classList.toggle('show');
+            overlay.classList.toggle('show');
+        }
+         // Close menu when a link is clicked
+    const menuLinks = document.querySelectorAll('.mb_links a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+    </script>
+
+
     <!-- ========================================= -->
     <!--           End: Full Navigation Bar        -->
     <!-- ========================================= -->
@@ -237,7 +267,7 @@
     <!-- ========================================= -->
     <!--           Start: about section     -->
     <!-- ========================================= -->
-    <div class="about_us">
+    <div class="about_us" id="about" >
         <div class="shape1">
             <img src="images/sidel.svg" alt="">
         </div>
@@ -261,7 +291,7 @@
     <!--           end: about section     -->
     <!-- ========================================= -->
 
-    <div class="mb_box">
+    <div class="mb_box" id="mb_about">
         <div class="lside">
             <img src="images/sidel.svg" alt="">
         </div>
@@ -279,7 +309,7 @@
     </div>
 
 
-    <div class="mb_service_list">
+    <div class="mb_service_list" >
 
         <div class="sbox on" style="background: #F5F9FE;">
             <div class="circle" style="background: #B5E7E8;"></div>
@@ -308,7 +338,7 @@
         </div>
     </div>
 
-    <div class="service">
+    <div class="service" id="careers">
         <div class="service_container">
 
             <div class="title">
@@ -404,7 +434,7 @@
 
         </div>
     </div>
-    <div class="mb_university">
+    <div class="mb_university" id="mb_location">
         <div class="mb_container">
             <h1 class="section-title">Top Universities</h1>
 
@@ -555,8 +585,6 @@
             }
 
             .mb_university-grid .university-card {
-                border: 1px solid #ccc;
-                padding: 10px;
                 border-radius: 5px;
             }
 
@@ -623,7 +651,7 @@
 
 
 
-    <div class="container">
+    <div class="container" id="location">
         <div class="ct">
             <h1 class="section-title">Top Universities</h1>
             <div class="view-more">
@@ -684,7 +712,7 @@
 
     </script>
 
-    <div class="sfooter">
+    <div class="sfooter" id="support" >
         <div class="ftop">
             <div class="lshp">
                 <img src="images/Pattern 5.svg" alt="">
@@ -734,15 +762,15 @@
                     <div class="links-section">
                         <div class="link-group">
                             <ul>
-                
+
                             </ul>
                         </div>
                         <div class="link-group">
                             <h4>Company</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#location">Location</a></li>
+                                <li><a href="#careers">Careers</a></li>
                             </ul>
                         </div>
                         <div class="link-group">
@@ -809,7 +837,7 @@
                 align-items: center;
                 justify-content: center;
                 font-family: Poppins;
-                font-size: 30px;
+                font-size: 25px;
                 font-weight: 700;
                 line-height: 36px;
                 text-align: center;
@@ -833,36 +861,46 @@
                 color: var(--primary);
                 font-size: 1.2rem;
                 transition: 0.5s;
-                width: auto;
-                color: black;
-                /* Let the button width be dynamic */
-                padding: 10px 20px;
-                /* Adjust padding for better button size */
-                font-size: 1.2rem;
-                margin: 10px;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 19.2px;
+                letter-spacing: 0.02em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                width: max-content;
+                padding: 5px;
+                transition: 1s;
+
+
             }
 
             .ft_mb_btn-unfilled {
-                margin: 10px;
+                transition: 1s;
 
+                margin: 10px;
                 height: 50px;
                 border-radius: 5px;
                 border: 1px white solid;
                 background: #ffffff00;
                 color: white;
-                font-size: 1.2rem;
-                width: auto;
-                /* Let the button width be dynamic */
-                padding: 10px 20px;
-                /* Adjust padding for better button size */
-                font-size: 1.2rem;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 19.2px;
+                letter-spacing: 0.02em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                width: max-content;
+                padding: 5px;
+
             }
 
             .ft_mb {
                 margin-top: 5%;
             }
         </style>
-        <div class="mb_fbottom">
+        <div class="mb_fbottom" id="mb_support">
             <footer class="mb_footer">
                 <div class="mb_footer-container">
                     <!-- Contact Section -->
@@ -877,20 +915,20 @@
                         </div>
                     </div>
                     <div class="mb_social-icons">
-                        <a href="#" class="mb_social-link">
+                        <a href="https://www.threads.net/@mentorgence/" class="mb_social-link">
                             <img src="images/Vector-1.svg" alt="Threads" class="mb_icon" />
                         </a>
-                        <a href="#" class="mb_social-link">
+                        <a href="https://www.instagram.com/mentorgence/" class="mb_social-link">
                             <img src="images/g2.svg" alt="Instagram" class="mb_icon" />
                         </a>
-                        <a href="#" class="mb_social-link">
+                        <a href="https://www.facebook.com/mentorgence/" class="mb_social-link">
                             <img src="images/Vector.svg" alt="Facebook" class="mb_icon" />
                         </a>
                     </div>
                     <div class="mb_nav-links">
-                        <a href="#">About Us</a>
-                        <a href="#">Support</a>
-                        <a href="#">Home</a>
+                        <a href="#mb_about">About Us</a>
+                        <a href="#mb_support">Support</a>
+                        <a href="#mb_home">Home</a>
                     </div>
             </footer>
             <div class="mb_footer-bottom">
